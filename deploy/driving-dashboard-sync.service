@@ -1,0 +1,12 @@
+[Unit]
+Description=Sync Wialon driving safety report into SQLite
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=drivingdash
+Group=drivingdash
+WorkingDirectory=/opt/driving-dashboard
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/driving-dashboard/.venv/bin/python /opt/driving-dashboard/sync_wialon_once.py --days 7

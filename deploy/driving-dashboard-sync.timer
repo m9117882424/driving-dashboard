@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Wialon driving safety sync timer
+
+[Timer]
+OnCalendar=*-*-* 06:10:00
+Persistent=true
+Unit=driving-dashboard-sync.service
+
+[Install]
+WantedBy=timers.target
